@@ -26,6 +26,7 @@ public class GUIPanel extends JPanel
 		
 		setupPanel();
 		setupLayout();
+		setupListeners();
 		
 	}
 	/**
@@ -56,11 +57,20 @@ public class GUIPanel extends JPanel
 		
 		firstButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent click) {
-				
+				changeScreenColor();
 			}
 		});
 		
 		
+		
+	}
+	
+	private void changeScreenColor() {
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red,green,blue));
 		
 	}
 	
